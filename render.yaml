@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: parla-api
+    runtime: python
+    pythonVersion: 3.13
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app --workers 4 --worker-class sync --timeout 60
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13
+      - key: FLASK_ENV
+        value: production
+      - key: JWT_SECRET_KEY
+        value: chave-super-secreta-parla

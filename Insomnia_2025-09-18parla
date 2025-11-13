@@ -1,0 +1,439 @@
+type: collection.insomnia.rest/5.0
+name: API Parla
+meta:
+  id: wrk_5d58cdfbf78d4da5825622f298e97038
+  created: 1750957642005
+  modified: 1750957642005
+collection:
+  - name: Usuários
+    meta:
+      id: fld_4283702180bc42c482139cdc117c3d16
+      created: 1750957668490
+      modified: 1750959877066
+      sortKey: -1750957668490
+    children:
+      - url: /usuarios
+        name: Listar os usuários
+        meta:
+          id: req_c65838961d1e4e96bfee963970139704
+          created: 1750957702505
+          modified: 1758212152078
+          isPrivate: false
+          sortKey: -1750957705621
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {"id":1,
+             "nome":"Bruna",
+             "email":"b@e.com"}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: usuarios/id
+        name: Buscar um usuário pelo ID
+        meta:
+          id: req_63bc1290cd9044d7b18dcccb049332e6
+          created: 1750959362810
+          modified: 1750959656895
+          isPrivate: false
+          sortKey: -1750957705721
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {"id":1,
+             "nome":"Bruna",
+             "email":"b@e.com"}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: /usuarios
+        name: Criar um novo usuário
+        meta:
+          id: req_5410f35b431f4d009c9f49b6e585763a
+          created: 1750959583340
+          modified: 1750959674587
+          isPrivate: false
+          sortKey: -1750957705821
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {"nome":"Bruna",
+            "idade":17,
+            "genero":"F",
+            "email":"bruna@email.com',
+            "senha":"123456"}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: usuarios/id
+        name: Atualizar os dados de um usuário
+        meta:
+          id: req_f42f582b1e7c45d68d5ee8b6c61f7528
+          created: 1750959682122
+          modified: 1750959806016
+          isPrivate: false
+          sortKey: -1750957705921
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {"nome": "Bruna G.",
+             "idade":18,
+             "email":"nova@email.com"}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: usuarios/id
+        name: Remover um usuário
+        meta:
+          id: req_3f2f873ef68843adb1348403a15bb41c
+          created: 1750959810037
+          modified: 1750959862458
+          isPrivate: false
+          sortKey: -1750957706021
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Atividades
+    meta:
+      id: fld_2ccd55a5d88d4bf78aac7d90d9a8b67a
+      created: 1750957675814
+      modified: 1750957675814
+      sortKey: -1750957675814
+    children:
+      - url: atividades
+        name: Criar uma nova atividade
+        meta:
+          id: req_a3a05d7c39da4824bee30ff71dc61edb
+          created: 1750959887472
+          modified: 1750959931369
+          isPrivate: false
+          sortKey: -1750959931299
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {"tentativas":3,
+             "dificuldade": "media",
+             "horario":"15:00", "erros":2}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: atividades
+        name: Listar todas as atividades
+        meta:
+          id: req_e7f4f7fe67254c6b9e7822a42f9d36d6
+          created: 1750959935235
+          modified: 1750959983556
+          isPrivate: false
+          sortKey: -1750959931399
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            [{"id":1,
+            	"dificuldade":"fácil",
+            	"erros":0}]
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: atividades/id
+        name: Buscar atividade por ID
+        meta:
+          id: req_ef7ba43b84a44e7899edbb1639a1fb03
+          created: 1750959986206
+          modified: 1750960016099
+          isPrivate: false
+          sortKey: -1750959931499
+        method: GET
+        body:
+          mimeType: application/json
+          text: '{"id":1,"tentativas":2,"erros":1}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: atividades/id
+        name: Atualizar uma atividade existente
+        meta:
+          id: req_9570f34b764a4a18af71f28d6a183bb8
+          created: 1750960022751
+          modified: 1750960067855
+          isPrivate: false
+          sortKey: -1750959931599
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {"tentativas":4,
+             "dificuldade":"dificil",
+             "errps":3}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: atividades/id
+        name: Deletar uma atividade
+        meta:
+          id: req_1ddffcd533aa4d559bcd9fc85d729ebd
+          created: 1750960072741
+          modified: 1750960092934
+          isPrivate: false
+          sortKey: -1750959931699
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Personagem
+    meta:
+      id: fld_8d92ced558a043d6952397cc452e5b32
+      created: 1750957697464
+      modified: 1750957697464
+      sortKey: -1750957697464
+    children:
+      - url: personagens
+        name: Criar um novo personagem
+        meta:
+          id: req_4f6fce273621404797b38ded24a7a403
+          created: 1750960100322
+          modified: 1750960195271
+          isPrivate: false
+          sortKey: -1750960195156
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {"sapato":1,
+            "acessorios":3,
+            "usuario_id":2,
+            "roupa":4,
+            "cabelo":2,
+            "corpo":5}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: personagens
+        name: Listar todos os personagens
+        meta:
+          id: req_28e7694f5474444cafddc8e44cd1f28a
+          created: 1750960197589
+          modified: 1750960238059
+          isPrivate: false
+          sortKey: -1750960195256
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            [{"id":1,
+            	"usuario_id":2,
+            	"roupa":4}]
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: personagens/id
+        name: Buscar personagem por ID
+        meta:
+          id: req_e32ffed5278049cba9ff4433241b6e1a
+          created: 1750960240425
+          modified: 1750960278958
+          isPrivate: false
+          sortKey: -1750960195356
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {"id":1,
+             "usuario_id":2,
+             "roupa":4,"sapato":1}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: personagens/id
+        name: Atualizar aparência do personagem
+        meta:
+          id: req_adc3bd051a6b4076a1a56f56e7c66ff5
+          created: 1750960282850
+          modified: 1750960319761
+          isPrivate: false
+          sortKey: -1750960195456
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {"sapato":2,
+             "roupa":5,
+             "cabelo":3}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: personagens/id
+        name: Deletar um personagem
+        meta:
+          id: req_14a3d00fd61448788cfd9d23cdcd8104
+          created: 1750960322571
+          modified: 1750960338957
+          isPrivate: false
+          sortKey: -1750960195556
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_1afc14cb05f7744e7560938829e56737dc4784d8
+    created: 1750957642010
+    modified: 1750957642010
+environments:
+  name: Base Environment
+  meta:
+    id: env_1afc14cb05f7744e7560938829e56737dc4784d8
+    created: 1750957642008
+    modified: 1750957642008
+    isPrivate: false
