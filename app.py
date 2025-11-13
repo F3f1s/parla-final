@@ -1,7 +1,13 @@
 import os
+import sys
+
+# Adicionar o diretório atual ao path para importações
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_bcrypt import Bcrypt
+from utils.db import close_connection
 
 app = Flask(__name__)
 
@@ -11,6 +17,9 @@ app.config['JWT_ACCESS_TOKEN_EXPIRES'] = 3600  # 1 hora
 
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
+
+# Registrar fechamento de conexão do banco
+app.teardown_appcontext(close_connection)
 
 # Importar blueprints
 try:

@@ -1,4 +1,13 @@
 import sqlite3
+from flask import g
+
+# Função para obter conexão com o banco de dados
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = sqlite3.connect('database.db')
+        db.row_factory = sqlite3.Row
+    return db
 
 def init_db():
     conn = sqlite3.connect('database.db')
@@ -52,3 +61,8 @@ def init_db():
 
     conn.commit()
     conn.close()
+
+def close_connection(exception):
+    db = getattr(g, '_database', None)
+    if db is not None:
+        db.close()
