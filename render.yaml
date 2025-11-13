@@ -3,7 +3,7 @@ services:
     name: parla-api
     runtime: python
     pythonVersion: 3.13
-    buildCommand: pip install -r requirements.txt
+    buildCommand: bash build.sh
     startCommand: gunicorn wsgi:app --workers 4 --worker-class sync --timeout 60
     healthCheckPath: /health
     envVars:
